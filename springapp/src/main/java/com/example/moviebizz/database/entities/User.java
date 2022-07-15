@@ -34,6 +34,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role = Role.CUSTOMER;
 
+    @Column(name = "age", length = 13)
+    private int age;
+
     public User() {
     }
 
@@ -43,7 +46,8 @@ public class User {
             String email,
             String password,
             String mobileNumber,
-            Role role
+            Role role,
+            int age
     ) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,6 +55,7 @@ public class User {
         this.password = password;
         this.mobileNumber = mobileNumber;
         this.role = role;
+        this.age=age;
     }
 
     public User(
@@ -60,7 +65,8 @@ public class User {
             String email,
             String password,
             String mobileNumber,
-            Role role
+            Role role,
+            int age
     ) {
         this.id = id;
         this.firstName = firstName;
@@ -69,6 +75,7 @@ public class User {
         this.password = password;
         this.mobileNumber = mobileNumber;
         this.role = role;
+        this.age=age;
     }
 
     public String getId() {
@@ -127,6 +134,14 @@ public class User {
         this.role = role;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -137,6 +152,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", mobileNumber='" + mobileNumber + '\'' +
                 ", role=" + role +
+                ", age=" + age +
                 '}';
     }
 }

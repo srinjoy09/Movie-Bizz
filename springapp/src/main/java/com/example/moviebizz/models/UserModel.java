@@ -9,14 +9,16 @@ public class UserModel {
     private String lastName;
     private String mobileNumber;
     private Role userRole;
+    private int age;
 
-    public UserModel(String email, String password, String firstName, String lastName, String mobileNumber, Role userRole) {
+    public UserModel(String email, String password, String firstName, String lastName, String mobileNumber, Role userRole, int age) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.mobileNumber = mobileNumber;
         this.userRole = userRole;
+        this.age=age;
     }
 
     public String getEmail() {
@@ -67,6 +69,14 @@ public class UserModel {
         this.userRole = userRole;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "UserModel{" +
@@ -76,6 +86,7 @@ public class UserModel {
                 ", lastName='" + lastName + '\'' +
                 ", mobileNumber='" + mobileNumber + '\'' +
                 ", userRole=" + userRole +
+                ", age=" + age +
                 '}';
     }
 }
