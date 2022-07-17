@@ -11,27 +11,21 @@ public class Ticket {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     @Column(name = "id")
     private String id;
+    @Column(name = "seat_num")
+    private int seatNum;
     @ManyToOne
     private User userID;
     @ManyToOne
-    private Movie movieID;
-    @ManyToOne
-    private Venue venueID;
+    private Screening screeningId;
 
     public Ticket() {
     }
 
-    public Ticket(String id, User userID, Movie movieID, Venue venueID) {
+    public Ticket(String id, int seatNum, User userID, Screening screeningId) {
         this.id = id;
+        this.seatNum = seatNum;
         this.userID = userID;
-        this.movieID = movieID;
-        this.venueID = venueID;
-    }
-
-    public Ticket(User userID, Movie movieID, Venue venueID) {
-        this.userID = userID;
-        this.movieID = movieID;
-        this.venueID = venueID;
+        this.screeningId = screeningId;
     }
 
     public String getId() {
@@ -42,6 +36,14 @@ public class Ticket {
         this.id = id;
     }
 
+    public int getSeatNum() {
+        return seatNum;
+    }
+
+    public void setSeatNum(int seatNum) {
+        this.seatNum = seatNum;
+    }
+
     public User getUserID() {
         return userID;
     }
@@ -50,29 +52,21 @@ public class Ticket {
         this.userID = userID;
     }
 
-    public Movie getMovieID() {
-        return movieID;
+    public Screening getScreeningId() {
+        return screeningId;
     }
 
-    public void setMovieID(Movie movieID) {
-        this.movieID = movieID;
-    }
-
-    public Venue getVenueID() {
-        return venueID;
-    }
-
-    public void setVenueID(Venue venueID) {
-        this.venueID = venueID;
+    public void setScreeningId(Screening screeningId) {
+        this.screeningId = screeningId;
     }
 
     @Override
     public String toString() {
         return "Ticket{" +
                 "id='" + id + '\'' +
+                ", seatNum=" + seatNum +
                 ", userID=" + userID +
-                ", movieID=" + movieID +
-                ", venueID=" + venueID +
+                ", screeningId=" + screeningId +
                 '}';
     }
 }

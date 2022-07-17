@@ -15,19 +15,18 @@ public class Venue {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     @Column(name = "id")
     private String id;
+    @Column(name = "name")
+    private String name;
     @Column(name = "location")
     private String location;
 
-    public Venue(String id, String location) {
-        this.id = id;
-        this.location = location;
-    }
-
-    public Venue(String location) {
-        this.location = location;
-    }
-
     public Venue() {
+    }
+
+    public Venue(String id, String name, String location) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
     }
 
     public String getId() {
@@ -36,6 +35,14 @@ public class Venue {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLocation() {
@@ -50,6 +57,7 @@ public class Venue {
     public String toString() {
         return "Venue{" +
                 "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
                 '}';
     }
