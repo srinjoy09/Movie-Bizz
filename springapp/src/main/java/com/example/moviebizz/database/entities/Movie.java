@@ -30,10 +30,6 @@ public class Movie {
         this.movieDesc = movieDesc;
     }
 
-    public Movie(String movieName, String movieDesc) {
-        this.movieName = movieName;
-        this.movieDesc = movieDesc;
-    }
 
     public String getId() {
         return id;

@@ -40,23 +40,6 @@ public class User {
     public User() {
     }
 
-    public User(
-            String firstName,
-            String lastName,
-            String email,
-            String password,
-            String mobileNumber,
-            Role role,
-            int age
-    ) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.mobileNumber = mobileNumber;
-        this.role = role;
-        this.age=age;
-    }
 
     public User(
             String id,
