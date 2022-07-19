@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MovieBizz" />
+        <module name="Movie-Bizz" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Movie-Bizz" target="1.5" />
       <module name="MovieBizz" target="17" />
     </bytecodeTargetLevel>
   </component>
